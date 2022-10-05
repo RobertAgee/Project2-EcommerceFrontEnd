@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <div class="row">
+        <h6 [innerText]=[customerHello]></h6>
+        <div class="col-2"></div>
+        <div class="col-8">          
+            <h3>BOOKS FOR SALE</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>IMAGE</th>
+                        <th>TITLE</th>
+                        <th>AUTHOR</th>
+                        <th>COST</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let eachBook of allBooks">
+                        <td>{{ eachBook.bookId }}</td>
+                        <td><img [src]="eachBook.bookImageUrl" height="200px" width="120px"></td>
+                        <td>{{ eachBook.bookTitle }}</td>
+                        <td>{{ eachBook.bookAuthor }}</td>
+                        <td>${{ eachBook.bookCost }}</td>
+                        <td>
+                            <button type="button" class="btn btn-success" (click)="addBook(eachBook.bookId, eachBook.bookTitle, eachBook.bookCost)">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

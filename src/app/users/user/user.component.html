@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-4">
+        <form (ngSubmit)="login()">
+            <div class="card mt-3">
+                <div class="card-title text-light" style="background-color: #297096"><h2>LOGIN</h2></div>
+                <div class="card-body">
+                    <div class="mb-3 mt-3">
+                        <div *ngIf="errorMessage" class="text-danger small">{{ errorMessage }}</div>
+                        <div class = "form-group">
+                        <label for="userName" class="form-label">Email:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="userName" 
+                            placeholder="Enter user email"
+                            name="uName"
+                            [(ngModel)]="user.email" #uName="ngModel" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class = "form-group">
+                        <label for="password" class="form-label">Password:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="password"
+                            placeholder="Enter password" 
+                            name="uPassword"
+                            [(ngModel)]="user.password" #uPassword="ngModel"required>
+                        </div>
+                    </div> 
+                </div>
+                <div class="card-footer" style="background-color: #297096">
+                    <button type="submit" class="btn btn-warning">LOGIN</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-4">
+        <form (ngSubmit)="register()">
+        <div class="card mt-3">
+            <div class="card-title text-light" style="background-color: #297096"><h2>REGISTER NEW USER</h2></div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div *ngIf="errorRegisterMessage" class="text-danger small">{{ errorRegisterMessage }}</div>
+                    <div class = "form-group">
+                    <label for="registrationEmail" class="form-label">Email:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="registrationEmail" 
+                        placeholder="Enter user email"
+                        name="uEmail"
+                        [(ngModel)]="registration.email" #uEmail="ngModel" required>
+                    </div>
+                    <div class="text-danger small" *ngIf="!uEmail.valid && uEmail.touched">
+                        Email is required!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class = "form-group">
+                    <label for="registrationPassword" class="form-label">Password:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="registrationPassword"
+                        placeholder="Enter password" 
+                        name="uRPassword"
+                        [(ngModel)]="registration.password" #pWord="ngModel" required>
+                    </div>
+                    <div class="text-danger small" *ngIf="!pWord.valid && pWord.touched">
+                        Password is required!
+                    </div>
+                    </div>
+                </div>
+                <div class="mx-3">
+                    <div class = "form-group">
+                    <label for="registrationFirstName" class="form-label">First Name:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="registrationFirstName"
+                        placeholder="Enter first name" 
+                        name="uFirstName"
+                        [(ngModel)]="registration.firstname" #fName="ngModel" required>
+                    </div>
+                    <div class="text-danger small" *ngIf="!fName.valid && fName.touched">
+                        First name is required!
+                    </div>
+                </div> 
+                <div class="mx-3 mb-3">
+                    <div class = "form-group">
+                    <label for="registrationLastName" class="form-label">Last Name:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="registrationLastName"
+                        placeholder="Enter last name" 
+                        name="uLastName"
+                        [(ngModel)]="registration.lastname" #lName="ngModel" required>
+                    </div>
+                    <div class="text-danger small" *ngIf="!lName.valid && lName.touched">
+                        Last name is required!
+                    </div>
+                </div>  
+        </div>
+            <div class="card-footer" style="background-color: #297096">
+                <button type="submit" class="btn btn-warning mx-3 mt-2 mb-2">REGISTER</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
+
