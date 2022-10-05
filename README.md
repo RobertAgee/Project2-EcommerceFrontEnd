@@ -1,3 +1,5 @@
+The BackEnd portion of this project can be found here: https://github.com/RobertAgee/Project2-ECommerceBackEnd
+
 # MyFirstBookstore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
